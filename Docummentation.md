@@ -1,6 +1,7 @@
 # Run laravels local development server
 ```
 php artisan serve
+Path on my PC -> D:\Applications\SoftwareEngineering
 ```
 
 # Routing
