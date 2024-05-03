@@ -86,11 +86,42 @@ Partial Folder is used to save specific components of pages
         </article>
     @endforeach
 ```
+# Model in Laravel
+Eloquent ORM (Object Relational Model). ORM make it easy for us to interact with database.
+```
+php artisan make:model Flight
+```
 
+### Command Pallete
+CTRL + Shift + P
+```
+Artisan: make model
+```
+In web.php, use the model
+```
+use App\Models\Post;
+```
+Install PHP Namespace Resolver Extension in VScode
 
+# Collection
+Collection is a wrapper of array of data. We can use many function wiht collection as oppose to standart array
+```
+    return collect(self::$blog_posts);
+```
+One of these function is firstWhere()
+```
+public static function find($slug){
+    $posts = static::all();
 
+    return $posts->firstWhere('slug', $slug);
+}
+```
 
-
+# Controller
+Instead of defining all of your request handling logic as closures in route files, we can organize this into "controller" classes
+```
+php artisan make:controller ProvisionServer --invokable
+```
 
 
 
