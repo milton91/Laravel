@@ -40,17 +40,52 @@ or
 ?= $name; ?
 ```
 
+# Blade
+```
+<h3><?= $name; ?></h3>
+```
+can be written as (only possible if our file have ".blade.php" as the name)
+```
+<h3>{{ $name }}}</h3>
+```
+Gets compiled as standart php echo in the background
 
+# Boostrapping
+One may use template from bootstrap at getbootstrap.com
 
+# Layouting System
+Blade layouting system provdes template for multiple pages (Extending a Layout)
+main.blade.php (main layout)
+```
+<div class="container mt-4">
+    @yield('container')
+</div>
+```
+home.blade.php (child layout)
+@extends('layouts.main')
+@section('container')
+    <h1>Halaman Home</h1>
+@endsection
 
+# Partials Folder
+Partial Folder is used to save specific components of pages
+```
+<body>
+    @include('partials.navbar')
+```
 
+# @dd (Dump and Die)
 
-
-
-
-
-
-
+# Blade Looping
+```
+    @foreach ($posts as $post)
+        <article class="mb-5">
+            <h2>{{ $post["title"] }}</h2>
+            <h5>{{ $post["author"] }}</h5>
+            <p>{{ $post["body"] }}</p>
+        </article>
+    @endforeach
+```
 
 
 
